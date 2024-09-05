@@ -1,0 +1,122 @@
+floors: G+4
+no. of rooms 32
+
+1-floor : 3D 6E 
+2-floor : 2D 7E
+3-floor : 5D 2E 1S
+4-floor : 4D    2S
+
+E : 15 : 1699
+D : 14 : 3145
+D+ : D+E : 4499
+S : 3 : 7299
+
+
+CREATE TABLE room_class
+(
+class_ID INT NOT NULL PRIMARY KEY,
+name VARCHAR(15),
+price number
+);
+
+INSERT INTO  room_class values(01,'Economy',1699);
+INSERT INTO  room_class values(02,'Deluxe',3145);
+INSERT INTO  room_class values(03,'Deluxe Plus',4655);
+INSERT INTO  room_class values(04,'Suite',7299);
+
+CREATE TABLE room_info
+(
+room_ID NUMBER NOT NULL PRIMARY KEY,
+class_id NUMBER,
+staus varchar(15)
+CHECK(status in ('Available','Booked','Checked-in','Checked-in')),
+FOREIGN KEY (class_id) REFERENCES room_class(class_id)
+);
+
+INSERT INTO  room_info values(101,1,'Available');
+INSERT INTO  room_info values(102,1,'Available');
+INSERT INTO  room_info values(103,1,'Available');
+INSERT INTO  room_info values(104,1,'Available');
+INSERT INTO  room_info values(105,1,'Available');
+INSERT INTO  room_info values(106,1,'Available');
+INSERT INTO  room_info values(107,2,'Available');
+INSERT INTO  room_info values(108,2,'Available');
+INSERT INTO  room_info values(109,2,'Available');
+
+INSERT INTO  room_info values(201,1,'Available');
+INSERT INTO  room_info values(202,1,'Available');
+INSERT INTO  room_info values(203,1,'Available');
+INSERT INTO  room_info values(204,1,'Available');
+INSERT INTO  room_info values(205,1,'Available');
+INSERT INTO  room_info values(206,1,'Available');
+INSERT INTO  room_info values(207,1,'Available');
+INSERT INTO  room_info values(208,2,'Available');
+INSERT INTO  room_info values(209,2,'Available');
+
+INSERT INTO  room_info values(301,2,'Available');
+INSERT INTO  room_info values(302,2,'Available');
+INSERT INTO  room_info values(303,1,'Available');
+INSERT INTO  room_info values(304,2,'Available');
+INSERT INTO  room_info values(305,1,'Available');
+INSERT INTO  room_info values(306,2,'Available');
+INSERT INTO  room_info values(307,2,'Available');
+INSERT INTO  room_info values(308,4,'Available');
+
+INSERT INTO  room_info values(401,2,'Available');
+INSERT INTO  room_info values(402,2,'Available');
+INSERT INTO  room_info values(403,2,'Available');
+INSERT INTO  room_info values(404,2,'Available');
+INSERT INTO  room_info values(405,4,'Available');
+INSERT INTO  room_info values(406,4,'Available');
+
+
+CREATE TABLE CUST_INFO
+(
+cust_id int NOT NULL AUTO_INCREMENT=2162400 PRIMARY KEY,
+fname varchar(25),
+lname varchar(25),
+phone int(10),
+email varchar(75),
+status varchar(15)
+);
+ALTER TABLE cust_info AUTO_INCREMENT=1;
+INSERT INTO cust_info VALUES('','','','');
+
+CREATE TABLE RESERVATION
+(
+reservation_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+cust_id int,
+room_id int,
+res_date datetime,
+check_in datetime,
+check_out datetime,
+stay datetime,
+FOREIGN KEY(cust_id)REFERENCES cust_info(cust_id),
+FOREIGN KEY (room_id)REFERENCES room_info(room_id)
+);
+
+CREATE VIEW economy_available AS SELECT room_ID FROM room_info
+WHERE class_id=1 AND status='Available';
+
+CREATE VIEW deluxe_available AS SELECT room_ID FROM room_info
+WHERE class_id=2 AND status='Available';
+
+CREATE VIEW suite_available AS SELECT room_ID FROM room_info
+WHERE class_id=4 AND status='Available';
+
+CREATE VIEW cust_id AS SELECT cust_id FROM cust_info;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
