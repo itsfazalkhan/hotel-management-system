@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach View | Booking</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+      </head>
+  <body>
+    <header>
+        <div class="header-left">
+          <a href="/">
+            <img class="logo" src="{% static 'images/logo.png'%}">
+          </a>
+          </div>
+        <!-- Add a menu icon here -->
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-right">
+            {% if user.is_authenticated %}
+            {% if request.method == 'POST' %}
+            <a href="/review" >Details</a>
+            {% endif %}
+            <a href="/signout" class="login">Sign Out</a>
+            {% else %}
+            <a href="/signup">Sign Up</a>
+            <a href="/signin" class="login">Sign In</a>
+            {% endif %}
+
+        </div>
+      </div>
+    </header>
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>Room</h1>
+        <h2>Booking</h2>
+
+    </div>
+<div class="form">
+    <form method="post" action="/booking">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="fname">First Name : </label>
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name" Required>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name : </label>
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone no. : </label>
+            <input type="number" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10 digit mobile no." required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" Required>
+        </div>
+
+        <div class="form-group">
+            <label>Economy</label>
+
+            <input type="number" min="0" max="{{e}}" width="100px" class="form-control" id="enum" name="enum" placeholder="Available {{e}}">
+        </div>
+
+       <div class="form-group">
+            <label>Deluxe</label>
+           <input type="number" min="0" max="{{d}}"class="form-control" id="dnum" name="dnum" placeholder="Available {{d}}">
+
+        </div>
+        <div class="form-group">
+            <label>Deluxe-Plus</label>
+            <input type="number" min="0" max="{{dp}}"class="form-control" id="dpnum" name="dpnum" placeholder="Available {{dp}}">
+
+        </div>
+        <div class="form-group">
+            <label>Suite</label>
+            <input type="number" min="0"max="{{s}}" class="form-control" id="snum" name="snum" placeholder="Available {{s}}">
+
+        </div>
+        <div class="form-group">
+            <label for="check_in">Check-in : </label>
+            <input type="date" class="form-control" id="check_in" name="check_in" Required>
+        </div>
+        <div class="form-group">
+            <label for="check_out">Check-out : </label>
+            <input type="date" class="form-control" id="check_out" name="check_out" Required>
+        </div>
+
+        <a href="/review"></a>
+        <button type="submit" class="btn message">Book</button>
+        </a>
+    </form>
+    </div>
+        </div>
+  <footer>
+        <h2>Made by :</h2>
+      <div class="container">
+        <div class="name"><h4>Punya GK</h4>
+        <p>2162626</p></div>
+
+        <div class="name"><h4>Likhithaa BR</h4>
+        <p>2162625</p></div>
+
+        <div class="name"><h4>Ayush Bhhattacharyya</h4>
+        <p>2162630</p>
+</div>
+
+
+
+      </div>
+    </footer>
+</body>
+</html>

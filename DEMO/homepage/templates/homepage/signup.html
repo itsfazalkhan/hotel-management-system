@@ -1,35 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach View | Sign-Up</title>
 
-<form action="/signup" method="post">
-{% csrf_token %}
-    <label>Username</label>
-    <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" Required>
-<br>
-    <label>First Name</label>
-    <input type="text" id="fname" name="fname" placeholder="Enter your first name" Required>
-<br>
-    <label>Last Name</label>
-    <input type="text" id="lname" name="lname" placeholder="Enter your last name" Required>
-<br>
-    <label>Email Address</label>
-    <input type="email" id="email" name="email" placeholder="Enter your Email address" Required>
-<br>
-    <label>Password</label>
-    <input type="password" id="pass1" name="pass1" placeholder="Create a password" Required>
-<br>
-    <label>Confirm your password</label>
-    <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
-<br>
-    <button type="submit">Sign Up</button>
-
-</form>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
+
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+      </head>
+  <body>
+    <header>
+        <div class="header-left">
+          <a href="/">
+            <img class="logo" src="{% static 'images/logo.png'%}">
+          </a>
+          </div>
+        <!-- Add a menu icon here -->
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-right">
+
+          <a href="/signin" class="login">Sign In</a>
+        </div>
+      </div>
+    </header>
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>W E L C O M E</h1>
+        <h2>Create your Account</h2>
+
+    </div>
+<div class="form">
+    <form method="post" action="/signup">
+        {% csrf_token %}
+        <div class="form-group">
+            <label style="font-family:georgia" for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Create A Username (use only letters and numbers)" Required>
+        </div>
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name" Required>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" Required>
+        </div>
+        <div class="form-group">
+            <label for="pass1">Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Create Your Password" Required>
+        </div>
+        <div class="form-group">
+            <label for="pass2">Confirm Password</label>
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
+        </div>
+        <button type="submit" class="btn message">Sign Up</button>
+    </form>
+    </div>
+        </div>
+  <footer>
+        <h2>Made by :</h2>
+      <div class="container">
+        <div class="name"><h4>Punya GK</h4>
+        <p>2162626</p></div>
+
+        <div class="name"><h4>Likhithaa BR</h4>
+        <p>2162625</p></div>
+
+        <div class="name"><h4>Ayush Bhhattacharyya</h4>
+        <p>2162630</p>
+</div>
+
+
+
+      </div>
+    </footer>
 </body>
 </html>

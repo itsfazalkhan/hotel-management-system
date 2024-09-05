@@ -1,8 +1,10 @@
-from django.db import models
 import mysql.connector
-mydb = mysql.connector.connect(host="localhost", user="root", passwd ="123456", database="db-hotel")
 
-mycursor = mydb.cursor()
-
-mycursor.execute("Show tables")
-
+# Create a connection to the MySQL database
+mydb = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='123456',
+    database='hotel',
+charset='utf8mb4'
+)

@@ -1,0 +1,276 @@
+/* Write your code at the bottom */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lucida Grande";
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background: url("/static/images/bg.jpg");
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+  margin-bottom: 3px;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+.signup {
+  background-color: #239b76;
+}
+
+
+.btn {
+  padding: 12px 24px;
+  color: white;
+  display: center;
+  opacity: 0.8;
+  border-radius: 4px;
+  align:center;
+  font-size:18px;
+  margin-left:80px;
+  margin-top:50px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(136, 231, 255, 0.26);
+  position :fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 240px;
+  margin-top: 20px;
+}
+
+.header-left {
+  float: left;
+  mix-blend-mode:normal;
+  size: 100%;
+}
+
+.header-right {
+  float: right;
+  margin-right: 25px;
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+
+  position: center;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.room-wrapper {
+  padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: rgb(253, 227, 193);
+  text-align: center;
+}
+
+.heading {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  color: #5f5d60;
+}
+
+.heading h2 {
+  font-weight: normal;
+
+}
+
+.room {
+  float: left;
+  width: 25%;
+}
+
+.room-icon {
+  position: relative;
+}
+
+.room-icon p {
+  font-size: x-large;
+  position: absolute;
+  top: 44%;
+  width: 100%;
+  color: white;
+}
+
+.text-contents {
+  width: 80%;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #b3aeb5;
+}
+
+.heading h3 {
+  font-weight: normal;
+}
+
+.message-wrapper {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 80px;
+  text-align: center;
+
+}
+
+.message {
+  padding: 15px 40px;
+  background-color: #5dca88;
+  cursor: pointer;
+  box-shadow: 0 7px #1a7940;
+}
+
+.message:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  float: left;
+}
+
+/* Write your code below */
+span.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
+.name  {
+  padding-top: 1cm;
+  padding-left: 2cm;
+  padding-right: 2cm;
+  padding-bottom: 1cm;
+float: left;
+font-size: larger;
+}
+
+.name h4{
+  font-size: larger;
+}
+ .name p{
+  font-size: large;
+ }
+
+ .form{
+ align:center;
+ text-align:left;
+color:#7a7a7aab;
+max-width:1200px;
+margin: 100px;
+background:beige;
+opacity:75%;
+padding: 100px 100px 100px 200px;
+border-radius: 75px;
+box-shadow:20px 20px 20px;
+shadow-opacity:100%;
+}
+
+.form-group{
+opacity:100%;
+color:blue;
+font-size:20px;
+padding:10px;
+
+}
+ .top-wrapper h2{
+ font-size:72px;
+ color:#1a7940;
+ }
+.mb-2{
+color:blue;
+border:5px;
+opacity:100%;
+margin-left:30px;
+margin-bottom:30px;
+padding: 180px 20px 100px 20px;
+align:center;
+width:350px;
+padding:5px;
+border-radius: 20px;
+border-color:black;
+
+ }
+
+ .btn message{
+
+ }

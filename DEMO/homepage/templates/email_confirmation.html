@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Welcome to Beach-view
+
+Hello {{ name }}!
+
+Please confirm your email by clicking on the following link.
+
+Confirmation Link : http://127.0.0.1:8000{%url 'activate' uid64=uid token=token%}
+
+{% endautoescape %}

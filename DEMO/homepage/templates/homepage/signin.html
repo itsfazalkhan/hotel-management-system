@@ -1,109 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign In</title>
-</head>
-<body>
-
-</body>
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel | Beach View</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <title>Beach View | Sign-In</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    
-  
-</head>
+
+
+
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+      </head>
   <body>
     <header>
         <div class="header-left">
-            <img class="logo" src="resources/logo.png">
+          <a href="/">
+            <img class="logo" src="{% static 'images/logo.png'%}">
+          </a>
           </div>
         <!-- Add a menu icon here -->
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="C:\Users\fazal\Dir\hotel-management\DEMO\homepage\templates\homepage\signup.html">Sign Up</a>
-          <a href="C:\Users\fazal\Dir\hotel-management\DEMO\homepage\templates\homepage\signin.html" class="login">Sign In</a>
+
+          <a href="/signup" class="login">Sign Up</a>
         </div>
       </div>
     </header>
     <div class="top-wrapper">
       <div class="container">
         <h1>W E L C O M E</h1>
-        <h1>HOTEL MANAGEMENT SYSTEM</h1>
-       
-      </div>
-    </div>
-    <div class="room-wrapper">
-      <div class="container">
-        <div class="heading">
-          <h2>Range of rooms we offer</h2>
-        </div>
-        <div class="rooms">
-          <div class="room">
-            <div class="room-icon">
-              <img src="resources/Economy.png">
-              <p>Economy</p>
-            </div>
-            <p class="text-contents">Budget-friendly</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="resources/Deluxe.png">
-              <p>Deluxe</p>
-            </div>
-            <p class="text-contents">Premium experience</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="resources/Deluxe Plus.png">
-              <p>Deluxe Plus</p>
-            </div>
-            <p class="text-contents">Premium experience with an extra bed</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="resources/Suite.png">
-              <p>Suite</p>
-            </div>
-            <p class="text-contents">Luxurious experience</p>
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-    </div>
-    <div class="message-wrapper">
-      <div class="container">
-        <div class="heading">
-          <h2>Check if we have rooms available?</h2>
-          <h3>Exquisite rooms in pocket-friendly price!</h3>
-        </div>
-        <span class="btn message">Check Prices</span>
-      </div>
-    </div>
-    <footer>
-    <h2>Made by :</h2>
-      <div class="container">
-        
-        <div class="name"><h4>Joshua PK Kurian</h4>
-        <p>2162433</p></div>
-    
-        <div class="name"><h4>Fazal Khan</h4>
-        <p>2162431</p></div>
+        <h2>Sign-in!</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+</svg>
 
-        <div class="name"><h4>Deependra Singh</h4>
-        <p>2162429</p></div>
-        
-        <div class="name"><h4>Aniket Das</h4>
-        <p>2162401</p></div>
-        
+<body>
+
+    <h3>Log In to your account!</h3>
+    <div class="form">
+    <form method="post" action="/signin" class="mb-2">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Username" Required>
+        </div>
+        <div class="form-group">
+            <label for="pass1">Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter Your Password" Required>
+        </div>
+
+        <button type="submit" class="btn message">Log In</button>
+    </form>
+        </div>
+</body>
+<footer>
+        <h2>Made by :</h2>
+      <div class="container">
+        <div class="name"><h4>Punya GK</h4>
+        <p>2162626</p></div>
+
+        <div class="name"><h4>Likhithaa BR</h4>
+        <p>2162625</p></div>
+
+        <div class="name"><h4>Ayush Bhhattacharyya</h4>
+        <p>2162630</p>
+</div>
+
+
+
       </div>
     </footer>
-  </body>
-</html>
 </html>

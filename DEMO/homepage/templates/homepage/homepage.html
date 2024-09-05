@@ -1,106 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel | Beach View</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    
-  
+    <title>Home | Beach-view</title>
 </head>
-  <body>
-    <header>
-        <div class="header-left">
-          <a href="C:\Users\fazal\Dir\hotel-management\DEMO\homepage\templates\homepage\homepage.html">
-            <img class="logo" src="resources/logo.png">
-          </a>
-          </div>
-        <!-- Add a menu icon here -->
-        <span class="fa fa-bars menu-icon"></span>
-        <div class="header-right">
-          <a href="C:\Users\fazal\Dir\hotel-management\DEMO\homepage\templates\homepage\signup.html">Sign Up</a>
-          <a href="C:\Users\fazal\Dir\hotel-management\DEMO\homepage\templates\homepage\signin.html" class="login">Sign In</a>
-        </div>
-      </div>
-    </header>
-    <div class="top-wrapper">
-      <div class="container">
-        <h1>W E L C O M E</h1>
-        <h1>HOTEL MANAGEMENT SYSTEM</h1>
-       
-      
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
     </div>
-    <div class="room-wrapper">
-      <div class="container">
-        <div class="heading">
-          <h2>Range of rooms we offer</h2>
-        </div>
-        <div class="rooms">
-          <div class="room">
-            <div class="room-icon">
-              <img src="https://prog-8.com/images/html/advanced/html.png">
-              <p>Economy</p>
-            </div>
-            <p class="text-contents">Budget-friendly</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-              <p>Deluxe</p>
-            </div>
-            <p class="text-contents">Premium experience</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="https://prog-8.com/images/html/advanced/ruby.png">
-              <p>Deluxe Plus</p>
-            </div>
-            <p class="text-contents">Premium experience with an extra bed</p>
-          </div>
-          <div class="room">
-            <div class="room-icon">
-              <img src="https://prog-8.com/images/html/advanced/php.png">
-              <p>Suite</p>
-            </div>
-            <p class="text-contents">Luxurious experience</p>
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="message-wrapper">
-      <div class="container">
-        <div class="heading">
-          <h2>Check if we have rooms available?</h2>
-          <h3>Exquisite rooms in pocket-friendly price!</h3>
-        </div>
-        <span class="btn message">Check Prices</span>
-      </div>
-    </div>
-    <footer>
+    {% endfor %}
+
+    <h3>Welcome to Beach-view!</h3>
+
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    {% else %}
+    <button type="submit"><a href="/signup">SignUp</a></button>
+    <br/>
+    <br/>
+    <button type="submit"><a href="/signin">SignIn</a></button>
+    {% endif %}
+</body>
+<footer>
         <h2>Made by :</h2>
       <div class="container">
-        <div class="name"><h4>Joshua PK Kurian</h4>
-        <p>2162433</p></div>
-    
-        <div class="name"><h4>Fazal Khan</h4>
-        <p>2162431</p></div>
+        <div class="name"><h4>Punya GK</h4>
+        <p>2162626</p></div>
 
-        <div class="name"><h4>Deependra Singh</h4>
-        <p>2162429</p>
+        <div class="name"><h4>Likhithaa BR</h4>
+        <p>2162625</p></div>
 
-        
+        <div class="name"><h4>Ayush Bhhattacharyya</h4>
+        <p>2162630</p>
 </div>
 
-<div class="name"><h4>Aniket Das</h4>
-        <p>2162401</p></div>
-        
 
-        
+
       </div>
     </footer>
-  </body>
 </html>
